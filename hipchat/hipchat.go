@@ -2,6 +2,7 @@
 package hipchat
 
 import (
+	"log"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
@@ -174,6 +175,7 @@ func NewClient(authToken string, server string) *Client {
 	if server == "" {
 		server = defaultBaseURL
 	}
+	log.Println("Server: " + server)
 
 	baseURL, err := url.Parse(server)
 	if err != nil {
